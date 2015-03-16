@@ -1,6 +1,6 @@
-class Question < ActiveRecord::Base
+class Answer < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
-  has_many :answers
+  belongs_to :question
 end

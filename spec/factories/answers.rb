@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :question do
+  factory :answer do
+    
   end
 
 end
