@@ -3,6 +3,5 @@ class Answer < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :question_id, presence: true
-
+  validates :question, presence: true
 end
