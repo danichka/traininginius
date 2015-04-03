@@ -1,0 +1,15 @@
+!!!
+%html
+
+  %head
+    %title ask question
+
+
+  %body
+
+    %p Ask your question
+    %div
+      = simple_form_for @question do |f|
+        = f.input :title, placeholder: 'title'
+        = f.input :body, placeholder: 'ask a question'
+        = f.button :submit

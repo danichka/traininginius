@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
+  root to: "questions#index"
+
   resources :questions do
     resources :answers
+  end
+
+  devise_for :users
+
+  devise_scope :user do 
+    get "/users/sign_out" => "devise/sessions#destroy"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

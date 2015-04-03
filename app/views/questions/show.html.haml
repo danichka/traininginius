@@ -1,0 +1,27 @@
+!!!
+%html
+
+  %head
+
+  %body
+
+    %div
+      %h2= @question.title
+      %h2= @question.body
+      - if user_signed_in? && @question.user_id == current_user.id
+        = button_to "delete the question", @question, :method=>:delete, :class=>:destroy
+
+    %div.answer
+      - @question.answers.each do |answer|
+        %p= answer.body
+        - if user_signed_in? && answer.user_id == current_user.id
+          %p= "wew"
+
+
+    %div.create_answer
+      -if user_signed_in?
+        = simple_form_for [@question, @answer] do |f|
+          = f.input :body
+          = f.button :submit
+      -else
+        %p= 'login or register to write a response'
