@@ -16,7 +16,7 @@ delete
     click_on 'delete the question'
 
     expect(current_path).to eq questions_path
-    # expect(page).to_not have_content 'Name title'
+    expect(page).to_not have_content 'Name title'
   end
 
   scenario 'Authenticated user, but not the author of question tries to delete it' do
