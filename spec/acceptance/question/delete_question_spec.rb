@@ -12,7 +12,8 @@ delete
 
   scenario 'button dellete question' do
     sign_in(author)
-    visit questions_path(question)
+
+    visit question_path(question)
     click_on 'delete the question'
 
     expect(current_path).to eq questions_path
