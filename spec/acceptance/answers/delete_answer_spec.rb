@@ -18,7 +18,7 @@ feature 'Delete answer', %q{
 
     expect(current_path).to eq question_path(question)
     
-    # expect(page).to_not have_content 'Body text'
+    expect(page).to_not have_content 'Body answer'
   end
 
   scenario 'Authenticated user, but not the author of answer tries to delete it' do

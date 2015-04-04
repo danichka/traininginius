@@ -79,7 +79,7 @@ RSpec.describe AnswersController, type: :controller do
       it 'does not change que attr' do
         answer.reload
         expect(answer.title).to eq "Name title"
-        expect(answer.body).to eq "Body text"
+        expect(answer.body).to eq "Body answer"
       end
 
       it 'render edit view' do
