@@ -13,10 +13,12 @@ feature 'Delete answer', %q{
     sign_in(author)
 
     visit question_path(question)
+    save_and_open_page
     click_on 'delete the answer'
 
     expect(current_path).to eq question_path(question)
-    expect(page).to_not have_content 'Body text'
+    
+    # expect(page).to_not have_content 'Body text'
   end
 
   scenario 'Authenticated user, but not the author of answer tries to delete it' do
