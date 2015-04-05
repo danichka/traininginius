@@ -26,9 +26,9 @@ feature 'Delete answer', %q{
     expect(page).to_not have_content 'delete the answer'
   end
 
-  scenario 'unregistered user, but not the author of answer tries to delete it' do
+  scenario 'unregistered user' do
     visit question_path(question)
-  
+
     expect(page).to_not have_content 'delete the answer'
   end
 
