@@ -26,4 +26,10 @@ delete
     visit question_path(question)
     expect(page).to_not have_content 'delete the question'
   end
+
+  scenario 'unregistered user, but not the author of question tries to delete it' do
+    visit question_path(question)
+  
+    expect(page).to_not have_content 'delete the question'
+  end
 end
