@@ -1,0 +1,10 @@
+!!!
+%html
+
+%head
+
+%body
+
+  %div
+    - @questions.each do |q|
+      %h2= link_to q.title, question_path(q)
