@@ -20,6 +20,7 @@ gem 'devise'
 gem 'simple_form'
 
 
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -28,6 +29,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :test do
