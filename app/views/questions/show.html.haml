@@ -4,7 +4,7 @@
   - if user_signed_in? && @question.user_id == current_user.id
     = button_to "delete the question", @question, :method=>:delete, :class=>:destroy
 
-%div.answers
+.answers
   = render 'answers'
 
 
