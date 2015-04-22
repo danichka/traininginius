@@ -1,2 +1,2 @@
-$('.answers').append('<%= j render 'questions/answer' %>');
+$('.answers').append('<%= j render partial: 'questions/answer', object: @answer %>');
 $('#answer_body').val('');
