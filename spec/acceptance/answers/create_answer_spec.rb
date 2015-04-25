@@ -18,7 +18,7 @@ new
     expect(page).to have_content 'Body answer'
   end
 
-  scenario 'create answer, unregistered user' do
+  scenario 'create answer, unregistered user',js: true do
     visit question_path(question)
 
     expect(page).to have_content 'login or register to write a response'

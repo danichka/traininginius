@@ -9,13 +9,13 @@ feature 'session user', %q{
 
   given(:user) { create(:user) }
 
-  scenario "Existing user try to sign in" do
+  scenario "Existing user try to sign in", js: true do
     sign_in user
 
     expect(page).to have_content 'Signed in successfully.'
   end
 
-  scenario 'Non-existing user try to sign in' do
+  scenario 'Non-existing user try to sign in', js: true do
     visit new_user_session_path
 
     fill_in 'Email', with: 'wrong@user.com'
@@ -26,14 +26,14 @@ feature 'session user', %q{
     expect(current_path).to eq new_user_session_path
   end
 
-  scenario 'render views sign up' do
+  scenario 'render views sign up', js: true do
     visit questions_path
     click_on 'sign up'
 
     expect(current_path).to eq new_user_registration_path
   end
 
-  scenario 'sign up' do
+  scenario 'sign up', js: true do
     visit new_user_registration_path
 
     fill_in 'Email', with: 'wrong@user.com'
@@ -46,7 +46,7 @@ feature 'session user', %q{
     expect(page).to have_content 'wrong@user.com'
   end
 
-  scenario 'sign up, Invalid' do
+  scenario 'sign up, Invalid', js: true do
     visit new_user_registration_path
 
     fill_in 'Email', with: ''
@@ -61,7 +61,7 @@ feature 'session user', %q{
   end
 
 
-  scenario 'sign out' do
+  scenario 'sign out', js: true do
     sign_in(user)
 
     visit questions_path
